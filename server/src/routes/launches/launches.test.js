@@ -1,10 +1,14 @@
 const request = require("supertest");
 const app = require("../../app");
-const { MongoCOnnect , MongoDIsconnesct} = require("../../services/mongo");
+const { MongoCOnnect, MongoDIsconnesct } = require("../../services/mongo");
+const { LoadPlanetData } = require("../../models/planets.model");
+const { LoadLaunchData } = require("../../models/launch.model");
 
 describe("Mongo", () => {
   beforeAll(async () => {
     await MongoCOnnect();
+    await LoadPlanetData();
+    await LoadLaunchData();
   });
   afterAll(async () => {
     await MongoDIsconnesct();
