@@ -8,7 +8,7 @@ describe("Mongo", () => {
   beforeAll(async () => {
     await MongoCOnnect();
     await LoadPlanetData();
-    await LoadLaunchData();
+    // await LoadLaunchData();
   });
   afterAll(async () => {
     await MongoDIsconnesct();
